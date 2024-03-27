@@ -1,4 +1,5 @@
 [
+
   {
     "Name": "Baboon",
     "Location": "Africa & Asia",
@@ -115,5 +116,23 @@
     "Population": 1,
     "Latitude": 47.608013,
     "Longitude": -122.335167
+  },
+  {
+    "error": false,
+    "category": "Dark",
+    "type": "twopart",
+    "setup": "What's the difference between a baby and a watermelon?",
+    "delivery": "One's satisfying to hit with a sledgehammer. The other's a watermelon.",
+    "flags": {
+      "nsfw": false,
+      "religious": false,
+      "political": false,
+      "racist": false,
+      "sexist": false,
+      "explicit": true
+    },
+    "id": 121,
+    "safe": false,
+    "lang": "en"
   }
 ]

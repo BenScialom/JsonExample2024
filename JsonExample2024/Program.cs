@@ -6,6 +6,7 @@ namespace JsonExample2024
 {
     internal class Program
     {
+        string text = File.ReadAllText(@"../../../monkeydata.json");
         public static string BasicSerializtionExmaple(Student student)
         {
             string json = JsonSerializer.Serialize(student);
@@ -28,24 +29,35 @@ namespace JsonExample2024
             return json;
         }
 
-        public static void BasicDeserializtion(string str)
-        {
-            Student student = JsonSerializer.Deserialize<Student>(str);
-            Console.WriteLine($@"Basic Deserializtion:
-    StudentId:{student.Id}
-    StudentName:{student.Name}
-    StudentAge:{student.Age}
-    Student BirthDate:{student.BirthDate.ToString("dd/MM/yyyy")}");
-            Console.WriteLine("Grades:");
-            foreach (var sub in student.Subjects)
-            {
-                Console.WriteLine($@"
-{nameof(sub.Name)}:{sub.Name}
-Final Grade:{sub.FinalGrade}");
-            }
-        }
+//        public static void BasicDeserializtion(string str)
+//        {
+//            Monkey monkey = JsonSerializer.Deserialize<Monkey>(str);
+//            Console.WriteLine($@"Basic Deserializtion:
+//    MonkeyName:{monkey.Name}
+//    MonkeyLocation:{monkey.Location}
+//    MonkeyDetails{monkey.Details}
+//    monkeyImage:{monkey.Image}
+//    Monkeypopulation:{monkey.Population}
+//MonkeyLatitued:{monkey.Latitude}
+//MonkeyLongitude:{monkey.Longitude}
+//            Console.WriteLine("Grades:");
+//            foreach (var sub in student.Subjects)
+//            {
+//                Console.WriteLine($@"
+//{nameof(sub.Name)}:{sub.Name}
+//Final Grade:{sub.FinalGrade}");
+//            }
+//        }
 
-        
+        public static string SerilizeMonkey(Monkey monkey)
+        {
+         
+
+            string json=JsonSerializer.Serialize(monkey);
+            Console.WriteLine(json);
+            return json;
+
+        }
 
        
         public static void DeserializtionWithOptions(string str)
@@ -98,12 +110,12 @@ Final Grade:{sub.FinalGrade}");
            
             string jsonStr2=SerializeWithOptions(student);
             Console.WriteLine("---------------------");
-            BasicDeserializtion(jsonStr1);
+            //BasicDeserializtion(jsonStr1);
             Console.WriteLine("---------------------");
 
             
 
-            BasicDeserializtion(jsonStr2);
+            //BasicDeserializtion(jsonStr2);
             Console.WriteLine("---------------------");
            
             
